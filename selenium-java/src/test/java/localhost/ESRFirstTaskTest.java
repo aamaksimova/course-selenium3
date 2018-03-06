@@ -1,28 +1,30 @@
 package localhost;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.HasCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class FirstTaskTest {
+public class ESRFirstTaskTest {
 
     private WebDriver driver;
     private WebDriverWait wait;
 
     @Before
     public void start() {
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.firefox.bin", "/home/amaksimova/Firefox_ESR_45/firefox/firefox");
+        DesiredCapabilities caps = DesiredCapabilities.firefox();
+        caps.setCapability("marionette", false);
+        driver = new FirefoxDriver(caps);
+        System.out.println(((HasCapabilities) driver).getCapabilities());
         wait = new WebDriverWait(driver, 10);
+
     }
 
     @Test
