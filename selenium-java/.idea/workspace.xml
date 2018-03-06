@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c166d4e-0d2a-41ef-92a3-c808999d4048" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/localhost/FirstTaskTest.class" afterPath="$PROJECT_DIR$/out/test/classes/localhost/FirstTaskTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/localhost/LoginTest.class" afterPath="$PROJECT_DIR$/out/test/classes/localhost/LoginTest.class" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/localhost/FirstTaskTest.java" afterPath="$PROJECT_DIR$/src/test/java/localhost/FirstTaskTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/localhost/LoginTest.java" afterPath="$PROJECT_DIR$/src/test/java/localhost/LoginTest.java" />
-    </list>
+    <list default="true" id="5c166d4e-0d2a-41ef-92a3-c808999d4048" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -95,8 +87,8 @@
       <file leaf-file-name="LoginTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/localhost/LoginTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+            <state relative-caret-position="486">
+              <caret line="27" column="53" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="27" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FirstTaskTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/localhost/FirstTaskTest.java">
+      <file leaf-file-name="AllAdminPagesTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/localhost/AllAdminPagesTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+            <state relative-caret-position="486">
+              <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -489,6 +481,7 @@
         <option value="$PROJECT_DIR$/src/test/java/localhost/ESRFirstTaskTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/localhost/NightlyFirstTaskTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/localhost/FirstTaskTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/localhost/AllAdminPagesTest.java" />
       </list>
     </option>
   </component>
@@ -580,7 +573,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FirstTaskTest">
+  <component name="RunManager" selected="JUnit.AllAdminPagesTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -600,6 +593,25 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+    </configuration>
+    <configuration name="AllAdminPagesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="selenium-java_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="localhost" />
+      <option name="MAIN_CLASS_NAME" value="localhost.AllAdminPagesTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
     </configuration>
     <configuration name="ESRFirstTaskTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="selenium-java_test" />
@@ -715,18 +727,20 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTaskTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.LoginTest" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.ESRFirstTaskTest" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.NightlyFirstTaskTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.AllAdminPagesTest" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTaskTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.NightlyFirstTaskTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ESRFirstTaskTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.LoginTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.AllAdminPagesTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTaskTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.NightlyFirstTaskTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ESRFirstTaskTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.LoginTest" />
       </list>
     </recent_temporary>
   </component>
@@ -747,6 +761,9 @@
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="AllAdminPagesTest - 2018.03.06 at 15h 00m 16s.xml">
+      <configuration name="AllAdminPagesTest" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="ESRFirstTaskTest - 2018.03.06 at 13h 43m 41s.xml">
       <configuration name="ESRFirstTaskTest" configurationId="JUnit" />
     </history-entry>
@@ -755,9 +772,6 @@
     </history-entry>
     <history-entry file="FirstTaskTest - 2018.03.06 at 14h 33m 24s.xml">
       <configuration name="FirstTaskTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LoginTest - 2018.02.14 at 09h 00m 09s.xml">
-      <configuration name="LoginTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="LoginTest - 2018.02.19 at 10h 03m 13s.xml">
       <configuration name="LoginTest" configurationId="JUnit" />
@@ -984,16 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/localhost/LoginTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/localhost/ESRFirstTaskTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -1018,6 +1022,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/localhost/LoginTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="53" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="27" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/localhost/AllAdminPagesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
