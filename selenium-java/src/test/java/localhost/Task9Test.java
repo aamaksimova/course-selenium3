@@ -65,9 +65,8 @@ public class Task9Test {
 
            if (!number.contains("0")) {
                System.out.println(i);
-               WebElement country = driver.findElement(By.xpath(".//td[7]//a"));
-               System.out.println(country.getAttribute("href"));
-               driver.navigate().to(country.getAttribute("href"));
+               driver.findElement(By.xpath("//tr[td[text()='38']]//td[7]/a")).click();
+               //country.click();
                wait.until(ExpectedConditions.titleContains("Edit Country"));
 
 
@@ -91,13 +90,28 @@ public class Task9Test {
    }
 
    @Test
-   public void task92Test() {
+   public void task9_2Test() {
        driver.navigate().to(" http://localhost/litecart/admin/?app=geo_zones&doc=geo_zones");
        wait.until(ExpectedConditions.titleContains("Geo Zones"));
        driver.findElement(By.cssSelector("table.dataTable a")).click();
        wait.until(ExpectedConditions.titleContains("Edit Geo Zone"));
-       WebElement state = driver.findElement(By.cssSelector("#table-zones td:nth-child(3)"));
-       System.out.println(state.getAttribute("selected"));
+
+       ArrayList<String> obtainedList = new ArrayList<>();
+       List<WebElement> states = driver.findElements(By.xpath("//select[contains(@name, '[zone_code]')]//option[@selected='selected']"));
+       for (WebElement state:states) {
+           obtainedList.add(state.getText());
+       }
+       System.out.println("obtainedList" + obtainedList);
+
+       ArrayList<String> sortedList = new ArrayList<>();
+       for (String s:obtainedList) {
+           sortedList.add(s);
+       }
+
+       Collections.sort(sortedList);
+       System.out.println("sortedList" + sortedList);
+       Assert.assertTrue(sortedList.equals(obtainedList));
+
    }
 
     @After
