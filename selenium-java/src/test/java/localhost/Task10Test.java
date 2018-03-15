@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import sun.plugin.javascript.navig.Link;
+
 
 import java.util.List;
 import java.util.Set;
@@ -50,22 +50,22 @@ public class Task10Test {
         WebElement block = driver.findElement(By.cssSelector("#box-campaigns a.link"));
         WebElement oldprice = block.findElement(By.cssSelector("div.price-wrapper s.regular-price"));
         String pprice = oldprice.getText();
-        System.out.println(pprice);
+        System.out.println("oldprice" + pprice);
 
         WebElement price = block.findElement(By.cssSelector("div.price-wrapper strong.campaign-price"));
         String nprice = price.getText();
-        System.out.println(nprice);
+        System.out.println("currentprice" + nprice);
 
         driver.findElement(By.cssSelector("#box-campaigns a.link")).click();
         wait.until(ExpectedConditions.titleContains("Yellow Duck"));
 
         WebElement detailedOldPrice = driver.findElement(By.cssSelector("div.price-wrapper s.regular-price"));
         String detailedPPrice = detailedOldPrice.getText();
-        System.out.println(detailedPPrice);
+        System.out.println("oldprice" + detailedPPrice);
 
         WebElement detailedPrice = driver.findElement(By.cssSelector("div.price-wrapper strong.campaign-price"));
         String detailedNPrice = detailedPrice.getText();
-        System.out.println(detailedNPrice);
+        System.out.println("currentprice" + detailedNPrice);
 
         Assert.assertTrue(pprice.equals(detailedPPrice));
         Assert.assertTrue(nprice.equals(detailedNPrice));
@@ -102,8 +102,9 @@ public class Task10Test {
         String pcolor = price.getCssValue("color");
         System.out.println(pcolor);
         Assert.assertTrue(pcolor.contains("204, 0, 0"));
-        String pfont = price.getCssValue("font-weight");
+        String pfont = price.getAttribute("tagName");
         System.out.println(pfont);
+        Assert.assertTrue(pfont.contains("STRONG"));
 
         driver.findElement(By.cssSelector("#box-campaigns a.link")).click();
         wait.until(ExpectedConditions.titleContains("Yellow Duck"));
@@ -112,8 +113,9 @@ public class Task10Test {
         String detailedpcolor = detailedprice.getCssValue("color");
         System.out.println(detailedpcolor);
         Assert.assertTrue(detailedpcolor.contains("204, 0, 0"));
-        String detailedpfont = detailedprice.getCssValue("font-weight");
+        String detailedpfont = detailedprice.getAttribute("tagName");
         System.out.println(detailedpfont);
+        Assert.assertTrue(detailedpfont.contains("STRONG"));
     }
 
     @Test
