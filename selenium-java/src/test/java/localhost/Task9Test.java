@@ -65,7 +65,7 @@ public class Task9Test {
 
            if (!number.contains("0")) {
                System.out.println(i);
-               driver.findElement(By.xpath("//tr[@class='row'][38]//a[@title='Edit']")).click();
+               driver.findElement(By.xpath("//tr[@class='row'][" + i + "]//a[@title='Edit']")).click();
                wait.until(ExpectedConditions.titleContains("Edit Country"));
 
                ArrayList<String> obtainedList = new ArrayList<>();
