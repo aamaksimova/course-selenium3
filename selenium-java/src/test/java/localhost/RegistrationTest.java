@@ -6,23 +6,28 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.Random;
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Calendar;
+import java.text.DateFormat;
 
 public class RegistrationTest {
 
     private WebDriver driver;
     private WebDriverWait wait;
 
-    /*public static void main(String[] args) {
-        Random rad = new Random();
-        for (int i=1; i <= 1; i ++) {
-            System.out.println("username" + rad.nextInt(100) + "@gmail.com");
-        }
-    }*/
+
+    public static String randomEmail() {
+        DateFormat date = new SimpleDateFormat("ddMMyyyyHHmm");
+        Date today = Calendar.getInstance().getTime();
+        String todayDate = date.format(today);
+        String email = "user" + todayDate + "@gmail.com";
+        return email;
+    }
 
     public boolean isElementPresent(By locator) {
         try {
@@ -35,7 +40,7 @@ public class RegistrationTest {
 
     @Before
     public void start() {
-        driver =new ChromeDriver();
+        driver =new FirefoxDriver();
         wait = new WebDriverWait(driver, 10);
 
         driver.navigate().to("http://localhost/litecart/admin");
@@ -45,13 +50,6 @@ public class RegistrationTest {
         wait.until(ExpectedConditions.titleIs("My Store"));
 
         driver.navigate().to("http://localhost/litecart/admin/?app=settings&doc=security");
-        /*WebElement menu = driver.findElement(By.cssSelector("ul#box-apps-menu li:nth-child(12)"));
-        menu.click();
-        System.out.println(menu.getAttribute("innerText"));
-        WebElement sub_menu = menu.findElement(By.cssSelector("ul.docs li#doc-security"));
-        sub_menu.click();*/
-        //WebElement sub_menu = menu.findElement(By.xpath(".//ul[@class='docs']//[@id='doc-security']"));
-       // sub_menu.click();
         Assert.assertTrue(isElementPresent(By.tagName("h1")));
         driver.findElement(By.xpath("//table[@class='dataTable']//tr[@class='row'][6]//a")).click();
         driver.findElement(By.cssSelector("input[name='value'][value='0']")).click();
@@ -72,9 +70,9 @@ public class RegistrationTest {
         driver.findElement(By.name("city")).sendKeys("San Francisco");
         driver.findElement(By.cssSelector("span.select2")).click();
         driver.findElement(By.cssSelector("input.select2-search__field")).sendKeys("United States" + Keys.ENTER);
-        //driver.findElement(By.id("select2-country_code-qp-result-n9uo-US")).click();
-        driver.findElement(By.name("email")).sendKeys("user" + Math.floor(Math.random()*11111) + "@gmail.com");
-        driver.findElement(By.name("phone")).sendKeys(Keys.END + "123456789");
+        driver.findElement(By.cssSelector("select[name='zone_code']")).sendKeys("California");
+        driver.findElement(By.name("email")).sendKeys(randomEmail());
+        driver.findElement(By.name("phone")).sendKeys(Keys.END + "+1123456789");
         driver.findElement(By.name("password")).sendKeys("user");
         driver.findElement(By.name("confirmed_password")).sendKeys("user");
         driver.findElement(By.cssSelector("button[name='create_account']")).click();
@@ -83,6 +81,13 @@ public class RegistrationTest {
         driver.findElement(By.xpath("//li//a[text()='Logout']")).click();
         Assert.assertTrue(isElementPresent(By.cssSelector("div.notice.success")));
 
+        driver.findElement(By.name("email")).sendKeys(randomEmail());
+        driver.findElement(By.name("password")).sendKeys("user");
+        driver.findElement(By.cssSelector("button[name='login']")).click();
+        Assert.assertTrue(isElementPresent(By.cssSelector("div.notice.success")));
+
+        driver.findElement(By.xpath("//li//a[text()='Logout']")).click();
+        Assert.assertTrue(isElementPresent(By.cssSelector("div.notice.success")));
 
     }
 
