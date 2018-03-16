@@ -85,8 +85,7 @@ public class Task9Test {
                Collections.sort(sortedList);
                System.out.println("sortedList" + sortedList);
                Assert.assertTrue(sortedList.equals(obtainedList));
-
-
+               driver.navigate().to("http://localhost/litecart/admin/?app=countries&doc=countries");
            }
        }
    }
