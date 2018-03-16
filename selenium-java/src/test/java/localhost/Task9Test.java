@@ -65,15 +65,15 @@ public class Task9Test {
 
            if (!number.contains("0")) {
                System.out.println(i);
-               driver.findElement(By.xpath("//tr[td[text()='38']]//td[7]/a")).click();
-               //country.click();
+               driver.findElement(By.xpath("//tr[@class='row'][38]//a[@title='Edit']")).click();
                wait.until(ExpectedConditions.titleContains("Edit Country"));
 
-
-               /*ArrayList<String> obtainedList = new ArrayList<>();
-               List<WebElement> states = driver.findElements(By.xpath("//table[@id=table-zones]//td[3]"));
+               ArrayList<String> obtainedList = new ArrayList<>();
+               List<WebElement> states = driver.findElements(By.xpath("//table[@id='table-zones']//td[3]"));
                for (WebElement el : states) {
-                   obtainedList.add(el.getAttribute("value"));
+                   if (el.getText().length() != 0) {
+                       obtainedList.add(el.getText());
+                   }
                }
                System.out.println("obtainedList" + obtainedList);
 
@@ -81,9 +81,11 @@ public class Task9Test {
                for (String s : obtainedList) {
                    sortedList.add(s);
                }
+
                Collections.sort(sortedList);
-               System.out.println("soretedList" + sortedList);
-               Assert.assertTrue(sortedList.equals(obtainedList));*/
+               System.out.println("sortedList" + sortedList);
+               Assert.assertTrue(sortedList.equals(obtainedList));
+
 
            }
        }
@@ -93,24 +95,32 @@ public class Task9Test {
    public void task9_2Test() {
        driver.navigate().to(" http://localhost/litecart/admin/?app=geo_zones&doc=geo_zones");
        wait.until(ExpectedConditions.titleContains("Geo Zones"));
-       driver.findElement(By.cssSelector("table.dataTable a")).click();
-       wait.until(ExpectedConditions.titleContains("Edit Geo Zone"));
+       List<WebElement> geo_zones = driver.findElements(By.cssSelector("tr.row a[title='Edit']"));
+       System.out.println(geo_zones.size());
+       int i=1;
+       while (i <= geo_zones.size()){
+           geo_zones = driver.findElements(By.cssSelector("tr.row a[title='Edit']"));
+           geo_zones.get(i-1).click();
+           wait.until(ExpectedConditions.titleContains("Edit Geo Zone"));
 
-       ArrayList<String> obtainedList = new ArrayList<>();
-       List<WebElement> states = driver.findElements(By.xpath("//select[contains(@name, '[zone_code]')]//option[@selected='selected']"));
-       for (WebElement state:states) {
-           obtainedList.add(state.getText());
+           ArrayList<String> obtainedList = new ArrayList<>();
+           List<WebElement> states = driver.findElements(By.xpath("//select[contains(@name, '[zone_code]')]//option[@selected='selected']"));
+           for (WebElement state : states) {
+               obtainedList.add(state.getText());
+           }
+           System.out.println("obtainedList" + obtainedList);
+
+           ArrayList<String> sortedList = new ArrayList<>();
+           for (String s : obtainedList) {
+               sortedList.add(s);
+           }
+
+           Collections.sort(sortedList);
+           System.out.println("sortedList" + sortedList);
+           Assert.assertTrue(sortedList.equals(obtainedList));
+           driver.navigate().to(" http://localhost/litecart/admin/?app=geo_zones&doc=geo_zones");
+           i++;
        }
-       System.out.println("obtainedList" + obtainedList);
-
-       ArrayList<String> sortedList = new ArrayList<>();
-       for (String s:obtainedList) {
-           sortedList.add(s);
-       }
-
-       Collections.sort(sortedList);
-       System.out.println("sortedList" + sortedList);
-       Assert.assertTrue(sortedList.equals(obtainedList));
 
    }
 
